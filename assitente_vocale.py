@@ -14,7 +14,10 @@ with sr.Microphone() as source:
         parole = r.recognize_google(audio, language="it-IT")
     except sr.UnknownValueError:
         print("non hai detto niente")
+        engine.say("non hai detto niente")
     
     
 if(parole is not None):
-    print(parole)
+    print("ciao "+parole+" piacere di conoscerti")
+    engine.say("ciao "+parole+" piacere di conoscerti")
+engine.runAndWait()
