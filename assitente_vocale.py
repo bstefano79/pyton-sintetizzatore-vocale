@@ -11,7 +11,7 @@ with sr.Microphone() as source:
     print("Pronto ad ascoltare...")
     try:
         audio = r.listen(source)
-        parole = r.recognize_google(audio, language="it-IT")
+        parole = r.recognize_google(audio, language="it-IT").lower()
     except sr.UnknownValueError:
         print("non hai detto niente")
         engine.say("non hai detto niente")
